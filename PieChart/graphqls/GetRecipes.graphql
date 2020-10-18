@@ -1,0 +1,24 @@
+query GetRecipes($page: Int!, $pageSize: Int!) {
+    listRecipes(input: {page: $page, includePremiumPreview: true, pageSize: $pageSize})  {
+    recipes {
+        id
+        title
+        description
+        nutrition {
+        values {
+          carbs
+          fat
+          protein
+          calories
+          fiber
+          }
+         percentages{
+             carbs
+             fat
+             protein
+          }
+        }
+        }
+       nextPage
+    }
+ }
